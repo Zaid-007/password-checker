@@ -4,11 +4,11 @@ import sys
 
 def request_api_data(query_char):
 	url = "https://api.pwnedpasswords.com/range/" + query_char # Eg: 'ABCDE' in place of query_char(here only first 5 char of hashed paswords are used)
-	res = requests.get(url)
+	res = requests.get(url) # Sends a GET request to url
 	# print(res) #Response[200] means OK success status || Response[400] means Bad Request response status
 
 	if res.status_code != 200:
-		raise RuntimeError(f'Error Fetching: {res.status_code}, Check the api and try again')
+		raise RuntimeError(f'Error Fetching: {res.status_code}, Check the api and try again!')
 	return res 
 
 # def read_response(response):
